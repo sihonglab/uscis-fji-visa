@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHS 2026-14439: Fixed Time Period of Admission Final Rule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1f2937;
+            --secondary: #3b82f6;
+            --accent: #06b6d4;
+            --bg: #f9fafb;
+            --white: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .header-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .theme-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-title-bar {
+            background: linear-gradient(135deg, #f0f4f8 0%, #f8fbff 100%);
+            border-left: 4px solid var(--secondary);
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title-bar h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .bilingual-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .language-column {
+            padding: 2rem;
+            line-height: 1.75;
+        }
+
+        .column-english {
+            background: var(--white);
+            border-right: 1px solid var(--border);
+        }
+
+        .column-chinese {
+            background: #fafcfd;
+        }
+
+        .lang-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: #dbeafe;
+            color: #1e40af;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        .column-chinese .lang-badge {
+            background: #ccfbf1;
+            color: #0d4f4f;
+        }
+
+        .language-column h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1.5rem 0 0.75rem 0;
+            line-height: 1.4;
+        }
+
+        .language-column p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            word-spacing: 0.02em;
+        }
+
+        .language-column p:first-child {
+            margin-top: 0;
+        }
+
+        .language-column ul,
+        .language-column ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .language-column li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+
+        .language-column strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .language-column em {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .info-box p {
+            color: var(--text);
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .info-box strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .bilingual-content {
+                grid-template-columns: 1fr;
+            }
+
+            .column-english {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .language-column {
+                padding: 1.5rem;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                padding: 1rem 1rem;
+            }
+
+            .header-content h1 {
+                font-size: 1.2rem;
+            }
+
+            .header-content p {
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section-title-bar {
+                padding: 1rem;
+            }
+
+            .section-title-bar h2 {
+                font-size: 1rem;
+            }
+
+            .language-column {
+                padding: 1.2rem;
+            }
+
+            .bilingual-content {
+                min-height: auto;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-light);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Print */
+        @media print {
+            .header-controls,
+            .header {
+                display: none;
+            }
+
+            .section-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-content">
+                <h1>DHS 2026-14439 Final Rule</h1>
+                <p>Fixed Time Period of Admission and Extension of Stay Procedure for Nonimmigrants</p>
+            </div>
+            <div class="header-controls">
+                <button class="theme-btn" id="themeToggle">🌙 Dark</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="info-box">
+            <p><strong>📋 Document Overview</strong></p>
+            <p>This bilingual reference document presents the DHS 2026-14439 Final Rule effective September 15, 2026, eliminating Duration of Status (D/S) and establishing fixed admission periods for F-1 students, J-1 exchange visitors, and I-category representatives.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-card">
+            <div class="section-title-bar">
+                <h2>Introduction & Overview</h2>
+                <span class="section-number">01</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="language-column column-english">
+                    <span class="lang-badge">EN ENGLISH</span>
+                    <p><strong>Rule Summary</strong></p>
+                    <p>The Department of Homeland Security (DHS) published this final rule on July 17, 2026. The rule fundamentally transforms the admission framework for nonimmigrants in F (academic student), J (exchange visitor), and I (representatives of foreign information media) classifications.</p>
+                    <p><strong>End of Duration of Status</strong></p>
+                    <p>Previously, these nonimmigrants enjoyed indefinite admission status—they could remain in the United States without a specified departure date as long as they maintained compliance with their visa status requirements. Under this new rule, that framework is entirely replaced with fixed, time-limited admission periods.</p>
+                    <p><strong>Key Affected Populations:</strong></p>
+                    <ul>
+                        <li>F-1 academic students</li>
+                        <li>F-2 dependent family members</li>
+                        <li>J-1 exchange visitors</li>
+                        <li>J-2 dependent family members</li>
+                        <li>I-category foreign media representatives</li>
+                    </ul>
+                </div>
+                <div class="language-column column-chinese">
+                    <span class="lang-badge">中 中文</span>
+                    <p><strong>规则摘要</strong></p>
+                    <p>美国国土安全部(DHS)于2026年7月17日发布了本最终规则。该规则从根本上改变了F类(学术学生)、J类(交流访问学者)和I类(外国新闻媒体代表)非移民的入境框架。</p>
+                    <p><strong>终止身份存续期制度</strong></p>
+                    <p>以前，这些非移民享受无限期的入境身份——只要他们遵守签证身份的要求，就可以在美国停留，没有指定的离境日期。根据本新规则，该框架被完全替换为固定的、有时限的入境期限。</p>
+                    <p><strong>受影响的主要人群：</strong></p>
+                    <ul>
+                        <li>F-1学术学生</li>
+                        <li>F-2家属成员</li>
+                        <li>J-1交流访问学者</li>
+                        <li>J-2家属成员</li>
+                        <li>I类外国媒体代表</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-card">
+            <div class="section-title-bar">
+                <h2>F-1 Student Classification: Key Changes</h2>
+                <span class="section-number">02</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="language-column column-english">
+                    <span class="lang-badge">EN ENGLISH</span>
+                    <p><strong>Four-Year Admission Cap</strong></p>
+                    <p>F-1 students are now admitted for a fixed period corresponding to their Form I-20 program end date, with an absolute maximum of four years. This replaces the previous indefinite Duration of Status framework.</p>
+                    <p><strong>Mandatory Extension of Stay (EOS) Requirements</strong></p>
+                    <p>Students requiring additional time beyond their fixed admission period must file a formal Extension of Stay application directly with U.S. Citizenship and Immigration Services (USCIS). No internal extensions by school officials are permitted.</p>
+                    <p><strong>Graduate Student Restrictions</strong></p>
+                    <ul>
+                        <li>Cannot change educational objectives or majors at any point during their program</li>
+                        <li>Cannot transfer to another school during their program without SEVP authorization for extenuating circumstances</li>
+                        <li>Must complete first academic year at initial school before transferring</li>
+                    </ul>
+                    <p><strong>Reduced Grace Periods</strong></p>
+                    <p>Post-graduation departure grace period is reduced from 60 days to 30 days. Students must either depart the U.S. or take action to maintain lawful status within this window.</p>
+                </div>
+                <div class="language-column column-chinese">
+                    <span class="lang-badge">中 中文</span>
+                    <p><strong>四年入境上限</strong></p>
+                    <p>F-1学生现在以对应其I-20表格项目结束日期的固定期限被准许入境，绝对最长为四年。这取代了以前的无限期身份存续期框架。</p>
+                    <p><strong>强制性停留延期(EOS)要求</strong></p>
+                    <p>需要超出其固定入境期限的额外时间的学生必须直接向美国公民及移民服务局(USCIS)提交正式的停留延期申请。不允许学校官员进行内部延期。</p>
+                    <p><strong>研究生级别限制</strong></p>
+                    <ul>
+                        <li>在其项目期间的任何时候都不能更改教育目标或专业</li>
+                        <li>在其项目期间不能转学到另一所学校，除非SEVP为特殊情况授权</li>
+                        <li>必须在初始学校完成第一个学年后才能转学</li>
+                    </ul>
+                    <p><strong>缩短的宽限期</strong></p>
+                    <p>毕业后离境宽限期从60天缩短至30天。学生必须在这个时间段内离开美国或采取行动维持合法身份。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-card">
+            <div class="section-title-bar">
+                <h2>Extension of Stay (EOS) Process</h2>
+                <span class="section-number">03</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="language-column column-english">
+                    <span class="lang-badge">EN ENGLISH</span>
+                    <p><strong>Application Requirements</strong></p>
+                    <p>To apply for an Extension of Stay, nonimmigrants must submit Form I-539 (Application to Extend/Change Nonimmigrant Status) directly to USCIS before their current admission period expires.</p>
+                    <p><strong>Required Documentation:</strong></p>
+                    <ul>
+                        <li>Completed Form I-539 with required fees</li>
+                        <li>Biometric services submission as required by 8 CFR 103.16</li>
+                        <li>Supporting evidence specific to the classification</li>
+                        <li>Current immigration status documentation</li>
+                    </ul>
+                    <p><strong>Timely Filing is Critical</strong></p>
+                    <p>Applications submitted after the admission period expires will not be accepted. No grace period exists for late filings.</p>
+                    <p><strong>Automatic Extension During Pending Applications</strong></p>
+                    <p>If filed timely, F-1 students may continue employment and study activities for up to 240 days while their EOS application is pending with USCIS, provided all other requirements are met.</p>
+                </div>
+                <div class="language-column column-chinese">
+                    <span class="lang-badge">中 中文</span>
+                    <p><strong>申请要求</strong></p>
+                    <p>要申请停留延期，非移民必须在其当前入境期限到期前直接向USCIS提交I-539表格(延期/变更非移民身份申请表)。</p>
+                    <p><strong>所需文件：</strong></p>
+                    <ul>
+                        <li>填妥的I-539表格及所需费用</li>
+                        <li>8 CFR 103.16要求的生物识别服务提交</li>
+                        <li>特定于该分类的支持证据</li>
+                        <li>当前移民身份文件</li>
+                    </ul>
+                    <p><strong>及时提交至关重要</strong></p>
+                    <p>在入境期限到期后提交的申请将不被接受。晚期提交没有宽限期。</p>
+                    <p><strong>待决申请期间的自动延期</strong></p>
+                    <p>如果及时提交，F-1学生在USCIS审理其EOS申请期间可继续就业和学习活动，最长为240天，但前提是满足所有其他要求。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-card">
+            <div class="section-title-bar">
+                <h2>J-1 Exchange Visitors & I-Category Media Representatives</h2>
+                <span class="section-number">04</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="language-column column-english">
+                    <span class="lang-badge">EN ENGLISH</span>
+                    <p><strong>J-1 Exchange Visitors</strong></p>
+                    <p>J-1 nonimmigrants are now admitted for fixed periods corresponding to their Form DS-2019 program end dates, with a maximum of four years. Like F-1 students, they must apply for EOS with USCIS if they need additional time.</p>
+                    <p><strong>Program Restrictions for J-1:</strong></p>
+                    <ul>
+                        <li>Program changes must be approved by the sponsoring organization</li>
+                        <li>Updated DS-2019 required for any program modifications</li>
+                        <li>SEVIS entries must reflect all changes</li>
+                    </ul>
+                    <p><strong>I-Category Foreign Media Representatives</strong></p>
+                    <p>I-category nonimmigrants receive fixed admission periods of up to 240 days, except those holding People's Republic of China (PRC) passports, who are limited to 90 days. These shorter periods reflect the temporary nature of media assignments.</p>
+                </div>
+                <div class="language-column column-chinese">
+                    <span class="lang-badge">中 中文</span>
+                    <p><strong>J-1交流访问学者</strong></p>
+                    <p>J-1非移民现在以对应其DS-2019表格项目结束日期的固定期限被准许入境，最长为四年。与F-1学生一样，如果他们需要额外时间，必须向USCIS申请EOS。</p>
+                    <p><strong>J-1的项目限制：</strong></p>
+                    <ul>
+                        <li>项目变更必须由赞助组织批准</li>
+                        <li>任何项目修改都需要更新的DS-2019</li>
+                        <li>SEVIS条目必须反映所有变更</li>
+                    </ul>
+                    <p><strong>I类外国媒体代表</strong></p>
+                    <p>I类非移民获得最多240天的固定入境期限，但中华人民共和国(PRC)护照持有人除外，他们被限制在90天。这些较短的期限反映了媒体工作的临时性质。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-card">
+            <div class="section-title-bar">
+                <h2>Effective Date & Transition Provisions</h2>
+                <span class="section-number">05</span>
+            </div>
+            <div class="bilingual-content">
+                <div class="language-column column-english">
+                    <span class="lang-badge">EN ENGLISH</span>
+                    <p><strong>Effective Date: September 15, 2026</strong></p>
+                    <p>The new fixed admission period framework takes effect on this date for all new arrivals and applications filed after this date.</p>
+                    <p><strong>Transition Period for Current Nonimmigrants</strong></p>
+                    <p>F and J nonimmigrants already in the United States on September 15, 2026, receive a transition period extending until the earliest of:</p>
+                    <ul>
+                        <li>November 14, 2030 (for F-1 students - 4 years plus 60-day departure period)</li>
+                        <li>October 15, 2030 (for J-1 exchange visitors - 4 years plus 30-day departure period)</li>
+                        <li>Their original program end date plus applicable grace periods</li>
+                    </ul>
+                    <p>After transition dates, the new fixed admission period rules apply to all nonimmigrants, including those already in status.</p>
+                </div>
+                <div class="language-column column-chinese">
+                    <span class="lang-badge">中 中文</span>
+                    <p><strong>生效日期：2026年9月15日</strong></p>
+                    <p>新的固定入境期限框架在该日期对所有新到达的人员和在该日期之后提交的申请生效。</p>
+                    <p><strong>已在美国非移民的过渡期</strong></p>
+                    <p>2026年9月15日已在美国的F类和J类非移民获得延至以下最早日期之一的过渡期：</p>
+                    <ul>
+                        <li>2030年11月14日（对于F-1学生 - 4年加60天离境期）</li>
+                        <li>2030年10月15日（对于J-1交流访问学者 - 4年加30天离境期）</li>
+                        <li>其原始项目结束日期加适用的宽限期</li>
+                    </ul>
+                    <p>在过渡日期之后，新的固定入境期限规则适用于所有非移民，包括已在身份中的人员。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Source:</strong> Federal Register, Vol. 91, No. 136, Friday, July 17, 2026</p>
+            <p>This is an official bilingual reference document for informational purposes only.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">For official guidance, consult the complete rule at federalregister.gov or contact DHS directly.</p>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+            });
+        }
+    </script>
+</body>
+</html>
