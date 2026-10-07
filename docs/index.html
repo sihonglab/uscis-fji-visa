@@ -3,622 +3,828 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-1/J-1签证新政完全指南 | F-1/J-1 Visa Policy Guide 2026</title>
+    <title>F-1/J-1 Visa Policy Guide 2026 | 签证新政完全指南</title>
+    <meta name="description" content="A bilingual guide to the DHS 2026-14439 Final Rule — the end of Duration of Status for F-1, J-1, and I nonimmigrants.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #1f2937;
-            --secondary: #3b82f6;
-            --accent: #06b6d4;
-            --bg: #f9fafb;
-            --white: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
+            color-scheme: light;
+            --bg: #f6f7fb;
+            --bg-grad-1: #eef2ff;
+            --bg-grad-2: #f0fdfa;
+            --surface: #ffffff;
+            --surface-2: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --text-faint: #94a3b8;
             --border: #e5e7eb;
-            --success: #10b981;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --border-strong: #cbd5e1;
+            --accent: #4f46e5;
+            --accent-2: #06b6d4;
+            --accent-soft: #eef2ff;
+            --accent-soft-ink: #4338ca;
+            --success-soft: #ecfdf5;
+            --success-ink: #047857;
+            --warn-soft: #fff7ed;
+            --warn-ink: #b45309;
+            --pink-soft: #fdf2f8;
+            --pink-ink: #be185d;
+            --brand-grad: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            --hero-grad: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #0e7490 100%);
+            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 24px 60px -20px rgba(15, 23, 42, 0.18);
+            --radius: 16px;
+            --radius-sm: 10px;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root[data-theme="dark"], :root:not([data-theme="light"]) {
+            /* fallback for prefers-color-scheme is below */
         }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                color-scheme: dark;
+                --bg: #080b14;
+                --bg-grad-1: #0b1226;
+                --bg-grad-2: #061a1f;
+                --surface: #0f172a;
+                --surface-2: #111c33;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --text-faint: #64748b;
+                --border: #1f2937;
+                --border-strong: #334155;
+                --accent: #818cf8;
+                --accent-2: #22d3ee;
+                --accent-soft: rgba(129, 140, 248, 0.12);
+                --accent-soft-ink: #c7d2fe;
+                --success-soft: rgba(16, 185, 129, 0.14);
+                --success-ink: #6ee7b7;
+                --warn-soft: rgba(234, 179, 8, 0.14);
+                --warn-ink: #fde68a;
+                --pink-soft: rgba(236, 72, 153, 0.14);
+                --pink-ink: #f9a8d4;
+                --hero-grad: linear-gradient(135deg, #020617 0%, #1e1b4b 55%, #082f49 100%);
+                --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+                --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #080b14;
+            --bg-grad-1: #0b1226;
+            --bg-grad-2: #061a1f;
+            --surface: #0f172a;
+            --surface-2: #111c33;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-faint: #64748b;
+            --border: #1f2937;
+            --border-strong: #334155;
+            --accent: #818cf8;
+            --accent-2: #22d3ee;
+            --accent-soft: rgba(129, 140, 248, 0.12);
+            --accent-soft-ink: #c7d2fe;
+            --success-soft: rgba(16, 185, 129, 0.14);
+            --success-ink: #6ee7b7;
+            --warn-soft: rgba(234, 179, 8, 0.14);
+            --warn-ink: #fde68a;
+            --pink-soft: rgba(236, 72, 153, 0.14);
+            --pink-ink: #f9a8d4;
+            --hero-grad: linear-gradient(135deg, #020617 0%, #1e1b4b 55%, #082f49 100%);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+        }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
+        body::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .header p {
-            font-size: 1.15rem;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-
-        .header-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 1.5rem;
-            font-weight: 500;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        /* Section Title */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 2px;
-        }
-
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        /* Card */
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-            border-color: var(--secondary);
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-badge {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-            width: fit-content;
-        }
-
-        .card-badge.complete {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .card-badge.premium {
-            background: #fce7f3;
-            color: #831843;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-            line-height: 1.6;
-        }
-
-        .card-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .card-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .card-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .card-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid var(--border);
-        }
-
-        .features h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .feature-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 0.25rem;
-        }
-
-        .feature-text h4 {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .feature-text p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
-            margin-top: 4rem;
-            font-size: 0.9rem;
-        }
-
-        .footer p {
-            margin: 0.5rem 0;
-        }
-
-        /* Language Toggle */
-        .lang-toggle {
             position: fixed;
-            top: 2rem;
-            right: 2rem;
+            inset: 0;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, var(--bg-grad-1), transparent 70%),
+                radial-gradient(1000px 500px at 110% 10%, var(--bg-grad-2), transparent 65%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* === Top controls === */
+        .topbar {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 1000;
             display: flex;
             gap: 0.5rem;
-            z-index: 1000;
+            padding: 0.4rem;
+            background: color-mix(in oklab, var(--surface) 85%, transparent);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: var(--shadow);
         }
 
-        .lang-btn {
-            padding: 0.6rem 1rem;
-            border: 2px solid var(--secondary);
-            background: var(--white);
-            color: var(--secondary);
-            border-radius: 6px;
+        .pill-btn {
+            padding: 0.45rem 0.9rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 999px;
             cursor: pointer;
+            font: 500 0.85rem/1 'Inter', sans-serif;
+            transition: color 0.2s, background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .pill-btn:hover { color: var(--text); }
+        .pill-btn.active {
+            background: var(--brand-grad);
+            color: #fff;
+            box-shadow: 0 4px 10px -4px rgba(79, 70, 229, 0.6);
+        }
+        .pill-btn svg { width: 15px; height: 15px; }
+
+        /* === Hero === */
+        .hero {
+            background: var(--hero-grad);
+            color: #fff;
+            padding: 7rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(600px 300px at 20% 10%, rgba(129, 140, 248, 0.35), transparent 70%),
+                radial-gradient(500px 300px at 85% 90%, rgba(34, 211, 238, 0.28), transparent 70%);
+            z-index: -1;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .hero-inner { max-width: 820px; margin: 0 auto; }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.9rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .hero-tag .dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.1rem;
+            background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p.lede {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.78);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat .num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a5b4fc 0%, #67e8f9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-stat .lbl {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 0.2rem;
+        }
+
+        /* === Container === */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        /* === Overview card === */
+        .overview {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: -5rem;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.75rem;
+            align-items: start;
+        }
+        .overview-icon {
+            width: 54px; height: 54px;
+            border-radius: 14px;
+            background: var(--brand-grad);
+            display: grid; place-items: center;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 10px 20px -8px rgba(79, 70, 229, 0.5);
+        }
+        .overview-icon svg { width: 26px; height: 26px; }
+        .overview h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .overview p {
+            color: var(--text-muted);
+            font-size: 0.97rem;
+            line-height: 1.7;
+        }
+        .overview p strong { color: var(--text); font-weight: 600; }
+
+        /* === Section heading === */
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 4rem 0 1.75rem;
+            gap: 2rem;
+        }
+        .section-head h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .section-head .eyebrow {
+            font-size: 0.75rem;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .lang-btn.active {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .lang-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Content with Language Classes */
-        [data-lang="zh"] {
-            display: none;
-        }
-
-        body.lang-zh [data-lang="en"] {
-            display: none;
-        }
-
-        body.lang-zh [data-lang="zh"] {
+            margin-bottom: 0.35rem;
             display: block;
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #10b981;
+        /* === Document cards === */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
+        .doc-card {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(300px 150px at 100% 0%, var(--accent-soft), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.35s;
+            z-index: -1;
+        }
+        .doc-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow-lg);
+        }
+        .doc-card:hover::before { opacity: 1; }
 
-            .header p {
-                font-size: 1rem;
-            }
+        .doc-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 1.1rem;
+            background: var(--accent-soft);
+            color: var(--accent-soft-ink);
+        }
+        .doc-tag.pink { background: var(--pink-soft); color: var(--pink-ink); }
 
-            .container {
-                padding: 2rem 1rem;
-            }
+        .doc-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+        }
+        .doc-card .desc {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+            line-height: 1.65;
+        }
+        .doc-meta {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.65rem;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .doc-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.3rem;
+            background: var(--brand-grad);
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 16px -8px rgba(79, 70, 229, 0.6);
+        }
+        .doc-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -8px rgba(79, 70, 229, 0.7);
+        }
+        .doc-cta svg {
+            width: 15px; height: 15px;
+            transition: transform 0.2s;
+        }
+        .doc-cta:hover svg { transform: translateX(3px); }
 
-            .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
+        /* === Reference grid === */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .ref-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .ref-item .ref-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-faint);
+        }
+        .ref-item .ref-value {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .ref-item .ref-sub {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
 
-            .grid {
-                gap: 1.5rem;
-            }
+        /* === FAQ === */
+        .faq-list {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .faq-item summary {
+            padding: 1.1rem 1.3rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.98rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            list-style: none;
+            color: var(--text);
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '';
+            width: 10px; height: 10px;
+            border-right: 2px solid var(--text-muted);
+            border-bottom: 2px solid var(--text-muted);
+            transform: rotate(45deg);
+            transition: transform 0.25s;
+            flex-shrink: 0;
+            margin-top: -4px;
+        }
+        .faq-item[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+        .faq-item .answer {
+            padding: 0 1.3rem 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
 
-            .card {
-                padding: 1.5rem;
-            }
+        /* === Footer === */
+        .footer {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            color: var(--text-faint);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+        .footer-brand {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+        .footer .small { font-size: 0.75rem; margin-top: 1rem; }
 
-            .lang-toggle {
-                top: 1rem;
-                right: 1rem;
-            }
+        /* === Language visibility === */
+        [data-lang="zh"] { display: none; }
+        body.lang-zh [data-lang="en"] { display: none; }
+        body.lang-zh [data-lang="zh"] { display: initial; }
 
-            .lang-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.8rem;
-            }
+        /* === Responsive === */
+        @media (max-width: 720px) {
+            .hero { padding: 6rem 1.25rem 4rem; }
+            .container { padding: 3rem 1rem; }
+            .overview { grid-template-columns: 1fr; padding: 1.5rem; margin-top: -3rem; }
+            .overview-icon { width: 46px; height: 46px; }
+            .section-head { flex-direction: column; gap: 0.5rem; align-items: flex-start; margin-top: 3rem; }
+            .hero-stats { gap: 1.2rem; }
+            .topbar { top: 0.75rem; right: 0.75rem; padding: 0.3rem; }
+            .pill-btn { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
-        <button class="lang-btn active" id="langEN" onclick="setLanguage('en')">English</button>
-        <button class="lang-btn" id="langZH" onclick="setLanguage('zh')">中文</button>
-    </div>
+    <nav class="topbar" aria-label="Preferences">
+        <button class="pill-btn active" id="langEN" onclick="setLanguage('en')">EN</button>
+        <button class="pill-btn" id="langZH" onclick="setLanguage('zh')">中文</button>
+        <button class="pill-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+    </nav>
 
-    <header class="header">
-        <div class="header-content">
-            <h1 data-lang="en">📚 F-1/J-1 Visa Policy Guide 2026</h1>
-            <h1 data-lang="zh">📚 F-1/J-1签证新政完全指南</h1>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-tag">
+                <span class="dot"></span>
+                <span data-lang="en">Effective September 15, 2026</span>
+                <span data-lang="zh">生效日期 · 2026 年 9 月 15 日</span>
+            </div>
+            <h1 data-lang="en">F-1 / J-1 Visa Policy Guide 2026</h1>
+            <h1 data-lang="zh">F-1 / J-1 签证新政完全指南</h1>
+            <p class="lede" data-lang="en">A bilingual deep-dive into DHS 2026-14439 — the Final Rule ending Duration of Status (D/S) and introducing fixed admission periods and Extensions of Stay for international students, exchange visitors, and media representatives.</p>
+            <p class="lede" data-lang="zh">围绕 DHS 2026-14439 最终规则的双语深度解读 — 终结身份存续期（D/S）、建立固定入境期限与停留延期（EOS）制度,面向国际学生、交流访问学者及媒体代表。</p>
 
-            <p data-lang="en">Essential Guide for International Students: Understanding DHS 2026-14439 - From Duration of Status (D/S) to Fixed Time Periods and Extension of Stay</p>
-            <p data-lang="zh">赴美留学生必读：理解DHS 2026-14439 - 从身份存续期（D/S）到固定停留期限和延期停留的完整解读</p>
-
-            <div class="header-badge">
-                <span class="status">
-                    <span class="status-dot"></span>
-                    <span data-lang="en">Effective September 15, 2026</span>
-                    <span data-lang="zh">生效日期：2026年9月15日</span>
-                </span>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">54</div>
+                    <span class="lbl" data-lang="en">Chapters</span>
+                    <span class="lbl" data-lang="zh">章节</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">2</div>
+                    <span class="lbl" data-lang="en">Languages</span>
+                    <span class="lbl" data-lang="zh">语言</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">4yr</div>
+                    <span class="lbl" data-lang="en">Max F/J</span>
+                    <span class="lbl" data-lang="zh">F/J 上限</span>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">240d</div>
+                    <span class="lbl" data-lang="en">Max I</span>
+                    <span class="lbl" data-lang="zh">I 类上限</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Introduction Section -->
-        <div class="features" style="background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%); border-left: 4px solid #3b82f6;">
-            <h3 data-lang="en">📌 What is DHS 2026-14439?</h3>
-            <h3 data-lang="zh">📌 什么是DHS 2026-14439？</h3>
-            <p data-lang="en">
-                DHS 2026-14439 is a final rule that eliminates the "Duration of Status" (D/S) framework for F-1 students, J-1 exchange visitors, and I-category representatives.
-                Starting September 15, 2026, these nonimmigrants will be admitted for <strong>fixed time periods</strong> (maximum 4 years for F/J, 240 days for I) instead of indefinite stays.
-                Students and exchange visitors who need additional time must now apply directly to USCIS for an Extension of Stay (EOS).
-            </p>
-            <p data-lang="zh">
-                DHS 2026-14439是一项最终规则，消除了F-1学生、J-1交流访问者和I类代表的"身份存续期"(D/S)框架。
-                从2026年9月15日开始，这些非移民将以<strong>固定时间期限</strong>入境（F/J类最长4年，I类240天），而不是无限期停留。
-                需要额外时间的学生和交流访问者现在必须直接向USCIS申请停留延期(EOS)。
-            </p>
-        </div>
+    <main class="container">
+        <!-- Overview -->
+        <section class="overview">
+            <div class="overview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            </div>
+            <div>
+                <h2 data-lang="en">What is DHS 2026-14439?</h2>
+                <h2 data-lang="zh">DHS 2026-14439 是什么?</h2>
+                <p data-lang="en">A final rule that eliminates the "Duration of Status" (D/S) framework for F-1 students, J-1 exchange visitors, and I-category media representatives. Starting September 15, 2026, these nonimmigrants are admitted for <strong>fixed time periods</strong> (max 4 years for F/J, 240 days for I) instead of indefinite stays. Anyone needing more time must file an <strong>Extension of Stay (EOS)</strong> with USCIS.</p>
+                <p data-lang="zh">该最终规则取消了 F-1 学生、J-1 交流访问学者及 I 类媒体代表适用的"身份存续期"(D/S) 框架。自 2026 年 9 月 15 日起,上述非移民将按<strong>固定期限</strong>入境(F/J 最长 4 年、I 类 240 天),不再无限期停留。如需更长时间,必须直接向 USCIS 申请<strong>停留延期(EOS)</strong>。</p>
+            </div>
+        </section>
 
-        <!-- Features Section -->
-        <div class="features">
-            <h3 data-lang="en">✨ About This Collection</h3>
-            <h3 data-lang="zh">✨ 关于此合集</h3>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">📖</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Comprehensive</h4>
-                        <h4 data-lang="zh">全面</h4>
-                        <p data-lang="en">Complete 54-chapter bilingual content</p>
-                        <p data-lang="zh">包含全部54章节的双语内容</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Multiple Views</h4>
-                        <h4 data-lang="zh">多个视角</h4>
-                        <p data-lang="en">Full version and summary designs</p>
-                        <p data-lang="zh">完整版和摘要版设计</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔤</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Bilingual</h4>
-                        <h4 data-lang="zh">双语</h4>
-                        <p data-lang="en">English & Chinese side-by-side</p>
-                        <p data-lang="zh">英文和中文并排显示</p>
-                    </div>
-                </div>
+        <!-- Documents -->
+        <div class="section-head">
+            <div>
+                <span class="eyebrow" data-lang="en">Collection</span>
+                <span class="eyebrow" data-lang="zh">合集</span>
+                <h2 data-lang="en">Documents</h2>
+                <h2 data-lang="zh">文档</h2>
             </div>
         </div>
 
-        <!-- Documents Section -->
-        <h2 class="section-title" data-lang="en">📑 Documents</h2>
-        <h2 class="section-title" data-lang="zh">📑 文档</h2>
-
-        <div class="grid">
-            <!-- Premium V2 Version -->
-            <div class="card">
-                <span class="card-badge premium" data-lang="en">PREMIUM</span>
-                <span class="card-badge premium" data-lang="zh">高级版</span>
+        <div class="doc-grid">
+            <article class="doc-card">
+                <span class="doc-tag pink" data-lang="en">Premium · Summary</span>
+                <span class="doc-tag pink" data-lang="zh">高级版 · 摘要</span>
                 <h3 data-lang="en">Premium Summary Edition</h3>
                 <h3 data-lang="zh">高级摘要版</h3>
-                <p data-lang="en">High-end professional design with elegant layouts and premium styling. Focuses on 5 core sections with key content. Ideal for presentations and quick reference.</p>
-                <p data-lang="zh">高端专业设计，采用优雅的布局和高级风格。重点介绍5个核心部分的关键内容。适合演讲和快速参考。</p>
-                <div class="card-meta">
-                    <span data-lang="en">✨ Premium Design</span>
-                    <span data-lang="zh">✨ 高级设计</span>
-                    <span data-lang="en">🎯 5 Sections</span>
-                    <span data-lang="zh">🎯 5 部分</span>
-                    <span data-lang="en">⚡ Quick Reference</span>
-                    <span data-lang="zh">⚡ 快速参考</span>
+                <p class="desc" data-lang="en">Refined presentation of 5 core sections. Side-by-side EN/中文, built for quick reference and sharing.</p>
+                <p class="desc" data-lang="zh">精选 5 个核心章节,中英并排排版,适合快速检索与分享传播。</p>
+                <div class="doc-meta">
+                    <span class="meta-chip" data-lang="en">5 sections</span>
+                    <span class="meta-chip" data-lang="zh">5 章节</span>
+                    <span class="meta-chip" data-lang="en">Quick read</span>
+                    <span class="meta-chip" data-lang="zh">速读</span>
+                    <span class="meta-chip" data-lang="en">Bilingual</span>
+                    <span class="meta-chip" data-lang="zh">双语</span>
                 </div>
-                <a href="DHS_2026-14439_Premium_V2.html" class="card-button" data-lang="en">Open Document</a>
-                <a href="DHS_2026-14439_Premium_V2.html" class="card-button" data-lang="zh">打开文档</a>
-            </div>
+                <a href="DHS_2026-14439_Premium_V2.html" class="doc-cta">
+                    <span data-lang="en">Open document</span>
+                    <span data-lang="zh">打开文档</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </article>
 
-            <!-- Bilingual Comparison -->
-            <div class="card">
-                <span class="card-badge" data-lang="en">BILINGUAL</span>
-                <span class="card-badge" data-lang="zh">双语版</span>
+            <article class="doc-card">
+                <span class="doc-tag" data-lang="en">Bilingual · Full text</span>
+                <span class="doc-tag" data-lang="zh">双语 · 全文</span>
                 <h3 data-lang="en">Bilingual Comparison</h3>
                 <h3 data-lang="zh">双语对照版</h3>
-                <p data-lang="en">Complete bilingual version with English original on the left and Chinese translation on the right. Best for parallel reading, translation verification, and detailed comparison.</p>
-                <p data-lang="zh">完整双语版本，左边是英文原文，右边是中文翻译。适合平行阅读、翻译验证和详细对比。</p>
-                <div class="card-meta">
-                    <span data-lang="en">🌍 Full Bilingual</span>
-                    <span data-lang="zh">🌍 完整双语</span>
-                    <span data-lang="en">🔤 Side-by-Side</span>
-                    <span data-lang="zh">🔤 并排展示</span>
-                    <span data-lang="en">📖 54 Chapters</span>
-                    <span data-lang="zh">📖 54 章节</span>
+                <p class="desc" data-lang="en">Complete 54-chapter bilingual edition. English original on the left, Chinese translation on the right — ideal for parallel reading and verification.</p>
+                <p class="desc" data-lang="zh">涵盖全部 54 章节的完整双语版本。左侧英文原文,右侧中文译文,适合平行阅读与翻译核对。</p>
+                <div class="doc-meta">
+                    <span class="meta-chip" data-lang="en">54 chapters</span>
+                    <span class="meta-chip" data-lang="zh">54 章节</span>
+                    <span class="meta-chip" data-lang="en">Side-by-side</span>
+                    <span class="meta-chip" data-lang="zh">并排</span>
+                    <span class="meta-chip" data-lang="en">Full text</span>
+                    <span class="meta-chip" data-lang="zh">全文</span>
                 </div>
-                <a href="DHS_2026-14439_Bilingual.html" class="card-button" data-lang="en">Open Document</a>
-                <a href="DHS_2026-14439_Bilingual.html" class="card-button" data-lang="zh">打开文档</a>
+                <a href="DHS_2026-14439_Bilingual.html" class="doc-cta">
+                    <span data-lang="en">Open document</span>
+                    <span data-lang="zh">打开文档</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </article>
+        </div>
+
+        <!-- Quick reference -->
+        <div class="section-head">
+            <div>
+                <span class="eyebrow" data-lang="en">At a glance</span>
+                <span class="eyebrow" data-lang="zh">速览</span>
+                <h2 data-lang="en">Quick reference</h2>
+                <h2 data-lang="zh">快速参考</h2>
             </div>
         </div>
 
-        <!-- Quick Reference Section -->
-        <div class="features" style="margin-top: 3rem;">
-            <h3 data-lang="en">⚡ Quick Reference</h3>
-            <h3 data-lang="zh">⚡ 快速参考</h3>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">📅</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Effective Date</h4>
-                        <h4 data-lang="zh">生效日期</h4>
-                        <p>September 15, 2026 / 2026年9月15日</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📋</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Rule Number</h4>
-                        <h4 data-lang="zh">规则编号</h4>
-                        <p>DHS 2026-14439</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Main Change</h4>
-                        <h4 data-lang="zh">主要变化</h4>
-                        <p data-lang="en">Duration of Status → Fixed Period</p>
-                        <p data-lang="zh">身份存续期 → 固定期限</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📌</div>
-                    <div class="feature-text">
-                        <h4 data-lang="en">Maximum Duration</h4>
-                        <h4 data-lang="zh">最大期限</h4>
-                        <p data-lang="en">4 Years (F/J), 240 days (I)</p>
-                        <p data-lang="zh">4年 (F/J), 240天 (I)</p>
-                    </div>
-                </div>
+        <div class="ref-grid">
+            <div class="ref-item">
+                <span class="ref-label" data-lang="en">Effective date</span>
+                <span class="ref-label" data-lang="zh">生效日期</span>
+                <span class="ref-value">Sep 15, 2026</span>
+                <span class="ref-sub" data-lang="en">New arrivals and filings</span>
+                <span class="ref-sub" data-lang="zh">适用于新入境及新申请</span>
+            </div>
+            <div class="ref-item">
+                <span class="ref-label" data-lang="en">Rule number</span>
+                <span class="ref-label" data-lang="zh">规则编号</span>
+                <span class="ref-value">DHS 2026-14439</span>
+                <span class="ref-sub" data-lang="en">Federal Register Vol. 91, No. 136</span>
+                <span class="ref-sub" data-lang="zh">联邦公报 第91卷 第136期</span>
+            </div>
+            <div class="ref-item">
+                <span class="ref-label" data-lang="en">Core change</span>
+                <span class="ref-label" data-lang="zh">核心变化</span>
+                <span class="ref-value" data-lang="en">D/S → Fixed period</span>
+                <span class="ref-value" data-lang="zh">D/S → 固定期限</span>
+                <span class="ref-sub" data-lang="en">EOS required for extensions</span>
+                <span class="ref-sub" data-lang="zh">延期需申请 EOS</span>
+            </div>
+            <div class="ref-item">
+                <span class="ref-label" data-lang="en">Max duration</span>
+                <span class="ref-label" data-lang="zh">最大期限</span>
+                <span class="ref-value">4y · 240d · 90d</span>
+                <span class="ref-sub" data-lang="en">F/J · I · I (PRC)</span>
+                <span class="ref-sub" data-lang="zh">F/J · I · I(中国护照)</span>
             </div>
         </div>
 
-        <!-- FAQ Section -->
-        <div class="features" style="margin-top: 3rem;">
-            <h3 data-lang="en">❓ Frequently Asked Questions</h3>
-            <h3 data-lang="zh">❓ 常见问题</h3>
-            <div style="margin-top: 2rem; line-height: 1.8;">
-                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
-                    <h4 data-lang="en" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Q: Who does this rule affect?</h4>
-                    <h4 data-lang="zh" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">问：这项规则影响谁？</h4>
-                    <p data-lang="en" style="color: var(--text-light);">F-1 students, J-1 exchange visitors, and I-category media representatives. The rule replaces indefinite "Duration of Status" with fixed time periods.</p>
-                    <p data-lang="zh" style="color: var(--text-light);">F-1学生、J-1交流访问者和I类媒体代表。该规则将无限期的"身份存续期"替换为固定时间期限。</p>
-                </div>
-
-                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
-                    <h4 data-lang="en" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Q: What if I need more time than the fixed period?</h4>
-                    <h4 data-lang="zh" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">问：如果我需要的时间超过固定期限怎么办？</h4>
-                    <p data-lang="en" style="color: var(--text-light);">You must file a formal Extension of Stay (EOS) application with USCIS before your current period expires. Simply continuing to study or work is not sufficient.</p>
-                    <p data-lang="zh" style="color: var(--text-light);">你必须在当前期限到期前向USCIS提交正式的停留延期(EOS)申请。仅仅继续学习或工作是不够的。</p>
-                </div>
-
-                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
-                    <h4 data-lang="en" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Q: What happens if I overstay?</h4>
-                    <h4 data-lang="zh" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">问：如果我逾期居留会怎样？</h4>
-                    <p data-lang="en" style="color: var(--text-light);">Unlawful presence automatically begins the day after your admission period expires. As little as 180 days of unlawful presence triggers a 3-year bar; over 1 year triggers a 10-year bar, affecting future visa applications.</p>
-                    <p data-lang="zh" style="color: var(--text-light);">无证居留在你的入境期限过期后的次日自动开始。仅需180天的无证居留就会触发3年禁入；超过1年会触发10年禁入，影响未来的签证申请。</p>
-                </div>
-
-                <div>
-                    <h4 data-lang="en" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Q: When does this rule take effect?</h4>
-                    <h4 data-lang="zh" style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">问：这项规则何时生效？</h4>
-                    <p data-lang="en" style="color: var(--text-light);">September 15, 2026 for new arrivals. Existing students/visitors have a transition period until November 14, 2030 (F-1) or October 15, 2030 (J-1), after which the new rules apply to everyone.</p>
-                    <p data-lang="zh" style="color: var(--text-light);">对于新入境者，生效日期为2026年9月15日。现有学生/访问者有过渡期至2030年11月14日（F-1）或2030年10月15日（J-1），之后新规则适用于所有人。</p>
-                </div>
+        <!-- FAQ -->
+        <div class="section-head">
+            <div>
+                <span class="eyebrow" data-lang="en">Need to know</span>
+                <span class="eyebrow" data-lang="zh">答疑</span>
+                <h2 data-lang="en">Frequently asked questions</h2>
+                <h2 data-lang="zh">常见问题</h2>
             </div>
         </div>
-    </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>
+                    <span data-lang="en">Who does this rule affect?</span>
+                    <span data-lang="zh">这项规则影响谁?</span>
+                </summary>
+                <div class="answer">
+                    <p data-lang="en">F-1 students, J-1 exchange visitors, and I-category media representatives — plus their F-2 / J-2 dependents. The rule replaces indefinite "Duration of Status" with fixed admission periods.</p>
+                    <p data-lang="zh">F-1 学生、J-1 交流访问学者及 I 类媒体代表,以及他们的 F-2 / J-2 家属。规则以固定期限入境取代了原本无限期的"身份存续期"。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span data-lang="en">What if I need more time than my fixed period?</span>
+                    <span data-lang="zh">如果需要比固定期限更长的时间怎么办?</span>
+                </summary>
+                <div class="answer">
+                    <p data-lang="en">File a formal Extension of Stay (EOS) with USCIS <strong>before</strong> your current period expires. Simply continuing to study or work is not sufficient — timely filing is required.</p>
+                    <p data-lang="zh">必须在当前期限到期<strong>之前</strong>向 USCIS 提交正式的停留延期(EOS)申请。仅仅继续学习或工作并不够 — 必须按时提交申请。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span data-lang="en">What happens if I overstay?</span>
+                    <span data-lang="zh">如果逾期居留会怎样?</span>
+                </summary>
+                <div class="answer">
+                    <p data-lang="en">Unlawful presence begins the day after your admission period expires. As little as 180 days triggers a 3-year bar; over 1 year triggers a 10-year bar — both affect future visa applications.</p>
+                    <p data-lang="zh">非法居留从入境期限到期后次日起算。累计 180 天即触发 3 年禁入,超过 1 年则触发 10 年禁入 — 都将影响未来的签证申请。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span data-lang="en">Is there a transition period for people already here?</span>
+                    <span data-lang="zh">已经在美的人有过渡期吗?</span>
+                </summary>
+                <div class="answer">
+                    <p data-lang="en">Yes. Existing students and visitors keep status until <strong>November 14, 2030</strong> (F-1) or <strong>October 15, 2030</strong> (J-1), after which the new rules apply to everyone.</p>
+                    <p data-lang="zh">有。现有学生与访问者可维持身份至 <strong>2030 年 11 月 14 日</strong>(F-1)或 <strong>2030 年 10 月 15 日</strong>(J-1),之后新规则适用于所有人。</p>
+                </div>
+            </details>
+        </div>
+    </main>
 
     <footer class="footer">
-        <p data-lang="en"><strong>F-1/J-1 Visa Policy Guide 2026</strong></p>
-        <p data-lang="zh"><strong>F-1/J-1签证新政完全指南</strong></p>
-        <p data-lang="en">Your comprehensive bilingual reference for the Final Rule eliminating Duration of Status (D/S) and implementing Fixed Time Periods of Admission</p>
-        <p data-lang="zh">关于取消身份存续期（D/S）框架、实施固定入境期限的最终规则的完整双语参考</p>
-        <p style="margin-top: 1.5rem; font-size: 0.8rem;" data-lang="en">Last updated: July 28, 2026</p>
-        <p style="margin-top: 1.5rem; font-size: 0.8rem;" data-lang="zh">最后更新：2026年7月28日</p>
+        <div class="footer-brand" data-lang="en">F-1 / J-1 Visa Policy Guide 2026</div>
+        <div class="footer-brand" data-lang="zh">F-1 / J-1 签证新政完全指南</div>
+        <p data-lang="en">A bilingual reference to the Final Rule ending Duration of Status and establishing fixed admission periods.</p>
+        <p data-lang="zh">关于终止身份存续期(D/S)、实施固定入境期限的最终规则的双语参考。</p>
+        <p class="small" data-lang="en">Informational only — not legal advice. Last updated July 28, 2026.</p>
+        <p class="small" data-lang="zh">仅供参考,不构成法律意见。最后更新于 2026 年 7 月 28 日。</p>
     </footer>
 
     <script>
-        // Language Toggle Functionality
+        // Language
         function setLanguage(lang) {
-            if (lang === 'zh') {
-                document.body.classList.add('lang-zh');
-            } else {
-                document.body.classList.remove('lang-zh');
-            }
-
+            document.body.classList.toggle('lang-zh', lang === 'zh');
             document.getElementById('langEN').classList.toggle('active', lang === 'en');
             document.getElementById('langZH').classList.toggle('active', lang === 'zh');
-
-            localStorage.setItem('preferred-language', lang);
+            document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
+            try { localStorage.setItem('preferred-language', lang); } catch (e) {}
         }
 
-        // Load saved language preference
-        window.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferred-language') || 'en';
-            setLanguage(savedLang);
+        // Theme
+        function applyTheme(theme) {
+            if (theme === 'light' || theme === 'dark') {
+                document.documentElement.dataset.theme = theme;
+            } else {
+                delete document.documentElement.dataset.theme;
+            }
+            try { localStorage.setItem('preferred-theme', theme); } catch (e) {}
+            updateThemeIcon();
+        }
+        function toggleTheme() {
+            const current = document.documentElement.dataset.theme;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const effective = current || (prefersDark ? 'dark' : 'light');
+            applyTheme(effective === 'dark' ? 'light' : 'dark');
+        }
+        function updateThemeIcon() {
+            const current = document.documentElement.dataset.theme;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = current ? current === 'dark' : prefersDark;
+            const icon = document.getElementById('themeIcon');
+            if (!icon) return;
+            icon.innerHTML = isDark
+                ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' // moon
+                : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>'; // sun
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            let lang = 'en';
+            let theme = null;
+            try {
+                lang = localStorage.getItem('preferred-language') || 'en';
+                theme = localStorage.getItem('preferred-theme');
+            } catch (e) {}
+            setLanguage(lang);
+            if (theme === 'dark' || theme === 'light') applyTheme(theme);
+            updateThemeIcon();
         });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeIcon);
     </script>
 </body>
 </html>
