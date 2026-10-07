@@ -3,241 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHS 2026-14439 Rule - Bilingual Document</title>
+    <title>DHS 2026-14439 Rule · Bilingual Reference</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            color-scheme: light;
+            --bg: #f6f7fb;
+            --bg-grad-1: #eef2ff;
+            --bg-grad-2: #f0fdfa;
+            --surface: #ffffff;
+            --surface-2: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --text-faint: #94a3b8;
+            --border: #e5e7eb;
+            --border-strong: #cbd5e1;
+            --accent: #4f46e5;
+            --accent-2: #06b6d4;
+            --accent-soft: #eef2ff;
+            --accent-ink: #4338ca;
+            --teal-soft: #ccfbf1;
+            --teal-ink: #0f766e;
+            --brand-grad: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            --hero-grad: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #0e7490 100%);
+            --shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 24px 60px -24px rgba(15, 23, 42, 0.18);
+            --radius: 14px;
+            --radius-sm: 10px;
         }
-        
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                color-scheme: dark;
+                --bg: #080b14;
+                --bg-grad-1: #0b1226;
+                --bg-grad-2: #061a1f;
+                --surface: #0f172a;
+                --surface-2: #111c33;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --text-faint: #64748b;
+                --border: #1f2937;
+                --border-strong: #334155;
+                --accent: #818cf8;
+                --accent-2: #22d3ee;
+                --accent-soft: rgba(129, 140, 248, 0.14);
+                --accent-ink: #c7d2fe;
+                --teal-soft: rgba(34, 211, 238, 0.14);
+                --teal-ink: #99f6e4;
+                --hero-grad: linear-gradient(135deg, #020617 0%, #1e1b4b 55%, #082f49 100%);
+                --shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+                --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #080b14;
+            --bg-grad-1: #0b1226;
+            --bg-grad-2: #061a1f;
+            --surface: #0f172a;
+            --surface-2: #111c33;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-faint: #64748b;
+            --border: #1f2937;
+            --border-strong: #334155;
+            --accent: #818cf8;
+            --accent-2: #22d3ee;
+            --accent-soft: rgba(129, 140, 248, 0.14);
+            --accent-ink: #c7d2fe;
+            --teal-soft: rgba(34, 211, 238, 0.14);
+            --teal-ink: #99f6e4;
+            --hero-grad: linear-gradient(135deg, #020617 0%, #1e1b4b 55%, #082f49 100%);
+            --shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            --shadow-lg: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-            color: #2c3e50;
-            line-height: 1.8;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
         }
-        
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, var(--bg-grad-1), transparent 70%),
+                radial-gradient(1000px 500px at 110% 10%, var(--bg-grad-2), transparent 65%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Floating top bar */
+        .topbar {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.4rem;
+            padding: 0.3rem;
+            background: color-mix(in oklab, var(--surface) 82%, transparent);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: var(--shadow);
+        }
+        .pill-btn {
+            padding: 0.4rem 0.75rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 999px;
+            cursor: pointer;
+            font: 500 0.82rem/1 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+        }
+        .pill-btn:hover { color: var(--text); background: var(--surface-2); }
+        .pill-btn svg { width: 15px; height: 15px; }
+
+        /* Hero */
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 3rem 2rem;
+            background: var(--hero-grad);
+            color: #fff;
+            padding: 6rem 2rem 4.5rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
         }
-        
+        .header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(600px 300px at 20% 10%, rgba(129, 140, 248, 0.3), transparent 70%),
+                radial-gradient(500px 300px at 85% 90%, rgba(34, 211, 238, 0.25), transparent 70%);
+            z-index: -1;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .header-inner { max-width: 880px; margin: 0 auto; }
+        .header .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+        .header .eyebrow .dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+        }
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+            font-size: clamp(1.75rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
         .header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-        
-        .container {
-            max-width: 1600px;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.78);
+            max-width: 680px;
             margin: 0 auto;
-            padding: 2rem;
         }
-        
+        .header .sub {
+            margin-top: 1.2rem;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* Bilingual section (preserves existing class names) */
         .bilingual-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #2a5298;
+            gap: 0;
+            margin-bottom: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0;
+            overflow: hidden;
+            transition: box-shadow 0.3s, border-color 0.2s;
+            position: relative;
         }
-        
+        .bilingual-section::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: var(--brand-grad);
+        }
+        .bilingual-section:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--border-strong);
+        }
+
         .english-col, .chinese-col {
             display: flex;
             flex-direction: column;
+            padding: 1.75rem 1.9rem;
+            min-width: 0;
         }
-        
         .english-col {
-            padding-right: 1rem;
-            border-right: 1px solid #e1e8ed;
+            border-right: 1px solid var(--border);
+            padding-right: 1.9rem;
         }
-        
         .chinese-col {
-            padding-left: 1rem;
+            background: color-mix(in oklab, var(--surface-2) 50%, transparent);
+            padding-left: 1.9rem;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
         }
-        
+
         .section-label {
-            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.65rem;
+            background: var(--accent-soft);
+            color: var(--accent-ink);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #7f8c8d;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            margin-bottom: 1.1rem;
+            width: fit-content;
         }
-        
-        .english-col .section-label {
-            color: #1e3c72;
+        .section-label::before {
+            content: '';
+            width: 7px; height: 7px; border-radius: 50%;
+            background: var(--accent);
         }
-        
-        .chinese-col .section-label {
-            color: #2a5298;
-        }
-        
+        .english-col .section-label { background: var(--accent-soft); color: var(--accent-ink); }
+        .english-col .section-label::before { background: var(--accent); }
+        .chinese-col .section-label { background: var(--teal-soft); color: var(--teal-ink); }
+        .chinese-col .section-label::before { background: var(--accent-2); }
+
         h2 {
-            font-size: 1.3rem;
-            color: #1e3c72;
-            margin-bottom: 1rem;
+            font-size: 1.08rem;
+            color: var(--text);
+            margin-bottom: 0.9rem;
             font-weight: 700;
             line-height: 1.4;
+            letter-spacing: -0.01em;
         }
-        
+
         .content {
-            font-size: 0.95rem;
-            color: #34495e;
-            line-height: 1.8;
+            font-size: 0.93rem;
+            color: var(--text-muted);
+            line-height: 1.75;
             word-break: break-word;
         }
-        
-        .content p {
-            margin-bottom: 1rem;
-        }
-        
-        .content ul, .content ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .content strong {
-            color: #1e3c72;
-            font-weight: 600;
-        }
-        
+        .content p { margin-bottom: 0.9rem; }
+        .content ul, .content ol { margin: 0 0 1rem 1.25rem; }
+        .content li { margin-bottom: 0.4rem; }
+        .content strong { color: var(--text); font-weight: 600; }
+
+        /* TOC */
         .toc {
-            background: #ecf0f1;
-            border-left: 4px solid #2a5298;
-            padding: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem 1.75rem;
             margin-bottom: 2rem;
-            border-radius: 4px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
         }
-        
         .toc h3 {
-            color: #1e3c72;
+            color: var(--text);
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
-        
-        .toc ul {
-            list-style: none;
-        }
-        
-        .toc li {
-            margin-bottom: 0.5rem;
-        }
-        
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 0.5rem; }
         .toc a {
-            color: #2a5298;
+            color: var(--accent-ink);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
+            font-size: 0.9rem;
         }
-        
-        .toc a:hover {
-            color: #1e3c72;
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 1200px) {
-            .bilingual-section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .english-col {
-                padding-right: 0;
-                border-right: none;
-                border-bottom: 1px solid #e1e8ed;
-                padding-bottom: 1.5rem;
-            }
-            
-            .chinese-col {
-                padding-left: 0;
-                padding-top: 1.5rem;
-            }
-            
-            .header h1 {
-                font-size: 1.8rem;
-            }
-        }
-        
+        .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 2rem;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            padding: 3rem 1.5rem;
+            color: var(--text-faint);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
             margin-top: 2rem;
         }
-        
-        /* Light and dark theme support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-                color: #e0e0e0;
-            }
-            
-            .bilingual-section {
-                background: #2d3748;
-                border-left-color: #4299e1;
-            }
-            
-            h2 {
-                color: #63b3ed;
-            }
-            
-            .content {
-                color: #cbd5e0;
-            }
-            
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }
+        ::selection { background: var(--accent); color: #fff; }
+
+        @media (max-width: 1200px) {
+            .bilingual-section { grid-template-columns: 1fr; }
             .english-col {
-                border-right-color: #4a5568;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-right: 1.9rem;
             }
-            
-            .toc {
-                background: #2d3748;
-                border-left-color: #4299e1;
-            }
-            
-            .toc h3 {
-                color: #63b3ed;
-            }
-            
-            .toc a {
-                color: #90cdf4;
-            }
-            
-            .toc a:hover {
-                color: #63b3ed;
-            }
-            
-            .section-label {
-                color: #a0aec0;
-            }
+            .chinese-col { padding-left: 1.9rem; }
+        }
+        @media (max-width: 640px) {
+            .header { padding: 5rem 1.25rem 3.5rem; }
+            .container { padding: 2rem 1rem 3rem; }
+            .english-col, .chinese-col { padding: 1.25rem; }
+            .topbar { top: 0.75rem; right: 0.75rem; }
+            .pill-btn { padding: 0.35rem 0.6rem; font-size: 0.78rem; }
+        }
+
+        @media print {
+            .topbar { display: none; }
+            body::before { display: none; }
+            .bilingual-section { page-break-inside: avoid; box-shadow: none; }
+            .header { background: #fff; color: #000; }
+            .header h1, .header p { color: #000; -webkit-text-fill-color: #000; background: none; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>DHS 2026-14439 Rule</h1>
-        <p>Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media</p>
-        <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.85;">Bilingual Reference Document - English & Chinese</p>
-    </div>
-    
+    <nav class="topbar" aria-label="Preferences">
+        <a href="index.html" class="pill-btn" aria-label="Back to index">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Home
+        </a>
+        <button class="pill-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+    </nav>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="eyebrow"><span class="dot"></span>Federal Register · Vol. 91 · No. 136</div>
+            <h1>DHS 2026-14439 Rule</h1>
+            <p>Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign Information Media.</p>
+            <div class="sub">Bilingual Reference · English & 中文</div>
+        </div>
+    </header>
+
     <div class="container">
+        <script>
+            function applyTheme(theme) {
+                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+                else delete document.documentElement.dataset.theme;
+                try { localStorage.setItem('preferred-theme', theme); } catch (e) {}
+                updateThemeIcon();
+            }
+            function toggleTheme() {
+                const current = document.documentElement.dataset.theme;
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const effective = current || (prefersDark ? 'dark' : 'light');
+                applyTheme(effective === 'dark' ? 'light' : 'dark');
+            }
+            function updateThemeIcon() {
+                const current = document.documentElement.dataset.theme;
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = current ? current === 'dark' : prefersDark;
+                const icon = document.getElementById('themeIcon');
+                if (!icon) return;
+                icon.innerHTML = isDark
+                    ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+                    : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+            }
+            (function () {
+                let theme = null;
+                try { theme = localStorage.getItem('preferred-theme'); } catch (e) {}
+                if (theme === 'dark' || theme === 'light') applyTheme(theme);
+                document.addEventListener('DOMContentLoaded', updateThemeIcon);
+                try { window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeIcon); } catch (e) {}
+            })();
+        </script>
         <div class="bilingual-section">
             <div class="english-col">
                 <div class="section-label">English Original</div>
